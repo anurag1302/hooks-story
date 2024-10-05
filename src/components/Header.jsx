@@ -10,6 +10,7 @@ const Header = () => {
           <Link to="/scroll">Scroll</Link>
           <Link to="/hover">Hover</Link>
           <Link to="/counter">Counter</Link>
+          <Link to="/todo">Todo</Link>
         </div>
       </header>
     </>
