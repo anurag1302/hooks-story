@@ -39,8 +39,8 @@ function RegistrationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <div className="container">
+    <form onSubmit={handleSubmit} className="form-container">
+      <div className="form-group">
         <label>Name:</label>
         <input
           type="text"
@@ -50,7 +50,7 @@ function RegistrationForm() {
         />
       </div>
 
-      <div className="container">
+      <div className="form-group">
         <label>Email:</label>
         <input
           type="email"
@@ -60,7 +60,7 @@ function RegistrationForm() {
         />
       </div>
 
-      <div className="container">
+      <div className="form-group">
         <label>Password:</label>
         <input
           type="password"
@@ -69,8 +69,10 @@ function RegistrationForm() {
           onChange={handleChange}
         />
       </div>
-      <button type="submit">Submit</button>
-      <button type="button" onClick={handleReset}>
+      <button className="btn" type="submit">
+        Submit
+      </button>
+      <button className="btn reset" type="button" onClick={handleReset}>
         Reset
       </button>
     </form>
