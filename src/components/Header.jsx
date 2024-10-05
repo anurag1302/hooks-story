@@ -11,6 +11,7 @@ const Header = () => {
           <Link to="/hover">Hover</Link>
           <Link to="/counter">Counter</Link>
           <Link to="/todo">Todo</Link>
+          <Link to="/registration">Registration Form</Link>
         </div>
       </header>
     </>

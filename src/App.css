@@ -1,5 +1,16 @@
 .flex {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 500px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  width: 250px;
+  align: left;
+}
+
+.form {
+  margin-top: 50px;
 }
