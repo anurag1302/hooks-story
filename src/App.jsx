@@ -7,6 +7,7 @@ import RegistrationForm from "./components/RegistrationForm";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import "./App.css";
+import ComplexForm from "./components/ComplexForm";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/counter" element={<Counter />} />
         <Route path="/todo" element={<Todo />} />
         <Route path="/registration" element={<RegistrationForm />} />
+        <Route path="/complex" element={<ComplexForm />} />
       </Routes>
     </Router>
   );
