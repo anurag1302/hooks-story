@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { z } from "zod";
+import "../css/complexform.css";
 // Zod schema for form validation
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -60,8 +61,8 @@ const ComplexForm = () => {
   return (
     <>
       <h1>Complex Form</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} className="complex-form">
+        <div className="form-group">
           <label>Name</label>
           <input
             type="text"
@@ -72,7 +73,7 @@ const ComplexForm = () => {
           {errors.name && <span>{errors.name}</span>}
         </div>
 
-        <div>
+        <div className="form-group">
           <label>Email</label>
           <input
             type="email"
@@ -83,7 +84,7 @@ const ComplexForm = () => {
           {errors.email && <span>{errors.email}</span>}
         </div>
 
-        <div>
+        <div className="form-group">
           <label>Password</label>
           <input
             type="password"
@@ -94,7 +95,7 @@ const ComplexForm = () => {
           {errors.password && <span>{errors.password}</span>}
         </div>
 
-        <div>
+        <div className="form-group">
           <label>Confirm Password</label>
           <input
             type="password"
@@ -106,7 +107,7 @@ const ComplexForm = () => {
         </div>
 
         <h3>Address</h3>
-        <div>
+        <div className="form-group">
           <label>Street</label>
           <input
             type="text"
@@ -116,7 +117,7 @@ const ComplexForm = () => {
           />
           {errors.street && <span>{errors.street}</span>}
         </div>
-        <div>
+        <div className="form-group">
           <label>City</label>
           <input
             type="text"
@@ -126,7 +127,7 @@ const ComplexForm = () => {
           />
           {errors.city && <span>{errors.city}</span>}
         </div>
-        <div>
+        <div className="form-group">
           <label>Zip Code</label>
           <input
             type="text"
@@ -139,22 +140,28 @@ const ComplexForm = () => {
 
         <h3>Hobbies</h3>
         {formValues.hobbies.map((hobby, index) => (
-          <div key={index}>
+          <div key={index} className="form-group">
             <input
               type="text"
               value={hobby}
               onChange={(e) => handleHobbiesChange(index, e.target.value)}
             />
-            <button type="button" onClick={() => removeHobby(index)}>
+            <button
+              type="button"
+              className="btn-remove"
+              onClick={() => removeHobby(index)}
+            >
               Remove
             </button>
           </div>
         ))}
-        <button type="button" onClick={addHobby}>
+        <button type="button" className="btn-add" onClick={addHobby}>
           Add Hobby
         </button>
 
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn-submit">
+          Submit
+        </button>
       </form>
     </>
   );
