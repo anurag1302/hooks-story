@@ -10,6 +10,8 @@ import "./App.css";
 import ComplexForm from "./components/ComplexForm";
 import ProductsWithoutMemo from "./components/ProductsWithoutMemo";
 import ProductsWithMemo from "./components/ProductsWithMemo";
+import ErrorBoundary from "./components/ErrorBoundary";
+import Buggy from "./components/Buggy";
 
 function App() {
   return (
@@ -17,17 +19,20 @@ function App() {
       <div>
         <Header />
       </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/scroll" element={<Scroll />} />
-        <Route path="/hover" element={<Hover />} />
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/todo" element={<Todo />} />
-        <Route path="/registration" element={<RegistrationForm />} />
-        <Route path="/complex" element={<ComplexForm />} />
-        <Route path="/withoutMemo" element={<ProductsWithoutMemo />} />
-        <Route path="/withMemo" element={<ProductsWithMemo />} />
-      </Routes>
+      <ErrorBoundary>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/scroll" element={<Scroll />} />
+          <Route path="/hover" element={<Hover />} />
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/todo" element={<Todo />} />
+          <Route path="/registration" element={<RegistrationForm />} />
+          <Route path="/complex" element={<ComplexForm />} />
+          <Route path="/withoutMemo" element={<ProductsWithoutMemo />} />
+          <Route path="/withMemo" element={<ProductsWithMemo />} />
+          <Route path="/buggy" element={<Buggy />} />
+        </Routes>
+      </ErrorBoundary>
     </Router>
   );
 }

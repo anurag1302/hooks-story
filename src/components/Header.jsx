@@ -15,6 +15,7 @@ const Header = () => {
           <Link to="/complex">Complex Form</Link>
           <Link to="/withoutMemo">Without Memo</Link>
           <Link to="/withMemo">With Memo</Link>
+          <Link to="/buggy">Error Boundary</Link>
         </div>
       </header>
     </>
